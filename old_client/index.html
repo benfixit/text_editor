@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        main {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9fBfd;
+        }
+
+        .controls {
+            flex: 1;
+            border: thin solid green;
+        }
+
+        .content {
+            flex: 4;
+            padding: 20px 40px;
+            display: flex;
+        }
+
+        .content > textarea {
+            flex: 3;
+            background-color: #ffffff;
+            outline: none;
+            border: thin solid #aaaaaa;
+            padding: 100px;
+        }
+
+        .content > aside {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="controls">
+            <p>Untitled Document</p>
+        </section>
+        <section class="content">
+            <aside id="left"></aside>
+            <textarea id="editor"></textarea>
+            <aside id="right"></aside>
+        </section>
+    </main>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", async function() {
+            const editor = document.getElementById("editor");
+
+            // fetch the data from the server
+            const fetchFileData = async () => {
+                const response = await fetch("")
+            }
+
+            editor.addEventListener("input", function(event) {
+                // send the contents to the server
+                console.log('Pissed 1');
+            });
+
+            editor.addEventListener("select", function(event) {
+                const textarea = event.target;
+                console.log(textarea.value.slice(textarea.selectionStart, textarea.selectionEnd));
+            });
+        })
+    </script>
+</body>
+</html>
